@@ -9,7 +9,7 @@ const Nav = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="w-full border-b ">
+        <nav className="w-full bg-white/20">
             <div className="flex justify-between items-center px-4 py-2">
 
                 {/* Logo */}
@@ -24,7 +24,7 @@ const Nav = () => {
                 </button>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex gap-10 text-lg font-medium capitalize">
+                <ul className="hidden md:flex gap-10 text-sm font-medium capitalize">
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/about-us">About us</Link></li>
                     <li><Link href="/contact-us">Contact us</Link></li>

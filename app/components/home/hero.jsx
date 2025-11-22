@@ -1,19 +1,34 @@
-import Image from 'next/image';
-import heroImage from '@/public/images/hero-img.png';
-import Button from '../Button';
+import HeroContent from './HeroContent';
+
 
 const hero = (  ) => {
-    return (
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full min-h-[70vh] items-center px-6 md:px-12">
-            <div className='text-4xl md:text-6xl font-bold w-5/6  leading-tight flex flex-col justify-center gap-10 h-full'>
-                <h1 className='text-center'>The Future of Global Crypto Payments</h1>
-                <p className='text-sm md:text-center text-justify font-extralight text-gray-300 font-'>ChainvexaPay is a decentralized non-custodial payment gateway enabling instant wallet‑to‑wallet transactions. Businesses accept crypto globally with automated 0.50% platform fee, complete transparency, and secure smart‑contract processing.</p>
-                <div className='flex justify-center items-center w-full'>
-                    <Button text='start accepting payment'/>
-                </div>
+
+    const highLights = [
+        {title: "0.50% Fee"},
+        {title: "instant Settlement"},
+        {title: "100% non-custodial"},
+        {title: "mutli-wallet support"},
+    ];
+
+    const SmallHighLights = () => {
+        return highLights.map((item, index) => (
+            <div key={index} className='p-4 rounded-2xl bg-gradient-to-br from-black via-blue-800/70 to-black shadow-[0_0_20px_4px_rgba(0,0,255,0.4)] backdrop-blur-md w-auto capitalize transition-all duration-300 hover:scale-105'>
+                <h3 className='text-center text-lg font-semibold text-blue-200 drop-shadow-lg'>
+                    {item.title}
+                </h3>
             </div>
-            <div className='w-full h-full flex justify-center items-center '>
-                <Image src={heroImage} alt="logo" className='' />
+
+        ))
+    }
+
+    const tittle = "Accept crypto payments instantly with our secure, fully non-custodial system.";
+    const subTittle = "A global wallet-to-wallet payment network powered by secure smart contracts, enabling instant, borderless transactions with no banks, no custody requirements, and no KYC, giving users complete financial freedom everywhere globally.";
+
+    return (
+        <div className='flex flex-col relative h-screen justify-center items-center bg-gradient-to-b from-black via-blue-900 to-black/80'>
+            <HeroContent tittle={tittle} subTittle={subTittle}/>
+            <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 w-3/4 mx-auto mt-10'>
+                <SmallHighLights />
             </div>
         </div>
     )

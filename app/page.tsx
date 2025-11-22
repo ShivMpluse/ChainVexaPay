@@ -6,6 +6,6 @@ const page = () => {
         <Hero />
     </div>
   )
-}
+} 
 
 export default page
