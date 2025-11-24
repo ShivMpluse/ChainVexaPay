@@ -9,7 +9,7 @@ const Button = ({text}) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.1, ease: 'easeIn' }}
             delay={0.2}
-            className='p-4 bg-linear-120 from-yellow-800  via-red-900 to-green-900/30 text-xl font-bold rounded-lg capitalize'>{text}</motion.button>
+            className='p-4 bg-linear-120 from-yellow-800/50  via-red-900 to-green-900/30 text-xl font-bold rounded-lg capitalize w-full md:w-auto'>{text}</motion.button>
     )
 }
 
